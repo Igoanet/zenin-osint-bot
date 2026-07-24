@@ -3793,7 +3793,7 @@ async def broadcast_send(update: Update, context: ContextTypes.DEFAULT_TYPE):
     )
     
     # Process users in background
-    await asyncio.create_task(process_broadcast(update, context))
+    await _app.create_task(process_broadcast(update, context))
     
     return ConversationHandler.END
 
@@ -4704,10 +4704,14 @@ async def error_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
 
 # ==================== MAIN ====================
+_app = None
+
 def main():
     load_settings()
 
     app = Application.builder().token(BOT_TOKEN).connect_timeout(30).read_timeout(30).write_timeout(30).build()
+    global _app
+    _app = app
 
     # Search handlers
     search_handlers = [
