@@ -23,7 +23,7 @@ from telegram.constants import ParseMode
 from telegram.helpers import escape_markdown
 
 # ==================== CONFIGURATION ====================
-BOT_TOKEN = "8630078554:AAHZdh21I3D__fObqDOvco5ge8zFkb6yg54"
+BOT_TOKEN = "8988535718:AAFRSonYHcssXoVXjPBcm5CaY5bnQRelVZU"
 
 BOT_NAME = "KING OSINT"
 BOT_VERSION = "28.0.0"
